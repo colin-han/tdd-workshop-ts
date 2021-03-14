@@ -24,6 +24,8 @@ describe('double', () => {
   it('test to string', () => {
     const fiveDollar = Money.dollar(5);
     expect(Money.str(fiveDollar)).toEqual("$5");
-  })
+    const fiveFranc = Money.franc(5);
+    expect(Money.str(fiveFranc)).toEqual("₣5")
+  });
 });
 

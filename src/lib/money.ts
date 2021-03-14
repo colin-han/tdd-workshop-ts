@@ -1,9 +1,14 @@
 interface Dollar {
-  amount: number
+  amount: number,
+  currency: 'dollar' | 'franc';
 }
 
 export function dollar(amount: number): Dollar {
-  return {amount}
+  return {amount, currency: 'dollar'}
+}
+
+export function franc(amount: number): Dollar {
+  return {amount, currency: 'franc'};
 }
 
 export function times(source: Dollar, multiplier: number): Dollar {
@@ -11,5 +16,9 @@ export function times(source: Dollar, multiplier: number): Dollar {
 }
 
 export function str(value: Dollar) {
-  return '$' + value.amount;
+  if (value.currency === 'dollar') {
+    return `$${value.amount}`;
+  } else {
+    return `₣${value.amount}`;
+  }
 }
