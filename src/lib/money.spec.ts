@@ -19,6 +19,11 @@ describe('double', () => {
     expect(ten.amount).toBe(10);
     const fifteen = Money.times(five, 3);
     expect(fifteen.amount).toBe(15);
+  });
+
+  it('test to string', () => {
+    const fiveDollar = Money.dollar(5);
+    expect(Money.str(fiveDollar)).toEqual("$5");
   })
 });
 
