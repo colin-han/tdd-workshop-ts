@@ -3,7 +3,7 @@ interface Dollar {
 }
 
 export function times(source: Dollar, multiplier: number) {
-  source.amount = 10;
+  source.amount *= multiplier;
 }
 
 export function dollar(amount: number) {
